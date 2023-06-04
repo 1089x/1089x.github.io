@@ -1,0 +1,173 @@
+<!-- Crée par Romain F. -->
+<!doctype html5>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Texte Inversé</title>
+        <link rel="icon" type="image/png" sizes="16x16" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROFj2GZeOJ061h-eTfYJCLSSFPSITiDTr_gQ&usqp=CAU">
+    </head>
+    <body>
+        <div class="container">
+            <div class="main">
+                <div class="container-1"><div class="title"><p>Texte normal</p></div><div class="content"><textarea class="text"></textarea><div class="convert"><div class="container-a"><a>Convertir</a></div></div></div></div>
+                <div class="container-2"><div class="title"><p>Résultat</p></div><div class="content"><textarea class="resultat"></textarea></div></div>
+            </div>
+        </div>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400&display=swap');
+
+        *,
+        *:after,
+        *:before{
+            -webkit-user-select: none; 
+            -webkit-touch-callout: none; 
+            -moz-user-select: none; 
+            -ms-user-select: none; 
+            user-select: none; 
+            padding: 0;
+            margin: 0;
+            font-family:Lexend;
+        }   
+        .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }   
+        .main{
+            padding: 30px;
+            box-shadow: 0 0 30px 20px rgb(201, 201, 201);
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        } 
+        .container-1, .container-2{
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px 0 20px 0;
+        }  
+        textarea{
+            min-height: 100px;
+            min-width: 700px;
+            max-width: 900px;
+            max-height: 200px;
+        }
+        .title{
+            font-size: 30px;
+            display: block;
+            text-align: center;
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .convert a{
+            font-size: 20px;
+            background: blue;
+            padding: 5px 15px 5px 15px;
+            cursor: pointer;
+            color: white;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .convert a:hover{
+            background: rgb(104, 104, 255);
+        }
+
+        .convert{
+            height: 35px;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        </style>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script type="text/javascript">
+            $('.convert a').click(() => {
+                var text = ""
+                var t = String($('.text').val())
+                var t = t.replaceAll("a", "∀")
+                var t = t.replaceAll("b", "ꓭ")
+                var t = t.replaceAll("c", "Ͻ")
+                var t = t.replaceAll("d", "ᗡ")
+                var t = t.replaceAll("e", "Ǝ")
+                var t = t.replaceAll("f", "ᖵ")
+                var t = t.replaceAll("g", "⅁")
+                var t = t.replaceAll("h", "H")
+                var t = t.replaceAll("i", "I")
+                var t = t.replaceAll("j", "ᒋ")
+                var t = t.replaceAll("k", "ꓘ")
+                var t = t.replaceAll("l", "⅂")
+                var t = t.replaceAll("m", "W")
+                var t = t.replaceAll("n", "N")
+                var t = t.replaceAll("o", "O")
+                var t = t.replaceAll("p", "Ԁ")
+                var t = t.replaceAll("q", "Ꝺ")
+                var t = t.replaceAll("r", "ꓤ")
+                var t = t.replaceAll("s", "S")
+                var t = t.replaceAll("t", "ꓕ")
+                var t = t.replaceAll("u", "Ո")
+                var t = t.replaceAll("v", "Ʌ")
+                var t = t.replaceAll("w", "M")
+                var t = t.replaceAll("x", "X")
+                var t = t.replaceAll("y", "⅄")
+                var t = t.replaceAll("z", "Z")
+                var t = t.replaceAll("A", "∀")
+                var t = t.replaceAll("B", "ꓭ")
+                var t = t.replaceAll("C", "Ͻ")
+                var t = t.replaceAll("D", "ᗡ")
+                var t = t.replaceAll("E", "Ǝ")
+                var t = t.replaceAll("F", "ᖵ")
+                var t = t.replaceAll("G", "⅁")
+                var t = t.replaceAll("H", "H")
+                var t = t.replaceAll("I", "I")
+                var t = t.replaceAll("J", "ᒋ")
+                var t = t.replaceAll("K", "ꓘ")
+                var t = t.replaceAll("L", "⅂")
+                var t = t.replaceAll("M", "ꟽ")
+                var t = t.replaceAll("N", "N")
+                var t = t.replaceAll("O", "O")
+                var t = t.replaceAll("P", "Ԁ")
+                var t = t.replaceAll("Q", "Ꝺ")
+                var t = t.replaceAll("R", "ꓤ")
+                var t = t.replaceAll("S", "S")
+                var t = t.replaceAll("T", "ꓕ")
+                var t = t.replaceAll("U", "Ո")
+                var t = t.replaceAll("V", "Ʌ")
+                var t = t.replaceAll("W", "Ϻ")
+                var t = t.replaceAll("X", "X")
+                var t = t.replaceAll("Y", "⅄")
+                var t = t.replaceAll("Z", "Z")
+                var t = t.replaceAll("?", "¿")
+                var t = t.replaceAll("!", "¡")
+                var t = t.replaceAll('\'', "╻")
+                var t = t.replaceAll("à", "∀")
+                var t = t.replaceAll("À", "∀")
+                var t = t.replaceAll("é", "Ǝ")
+                var t = t.replaceAll("è", "Ǝ")
+                var t = t.replaceAll("É", "Ǝ")
+                var t = t.replaceAll("È", "Ǝ")
+                var t = t.replaceAll("ç", "Ͻ")
+                var t = t.replaceAll("Ç", "Ͻ")
+                for(let i= t.length; i > 0; i--){
+                    text += t[i - 1]
+                }
+                $('.resultat').val(text)
+            })
+        </script>
+    </body>
+</html>
