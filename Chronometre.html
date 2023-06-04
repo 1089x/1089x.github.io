@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Chonomètre</title>
+        <link rel="icon" type="image/png" sizes="16x16" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1-Ji90hXsQscclysPcXz3ElG1GkautC-4Mw&usqp=CAU">
+        <style>
+            h1 {text-align: center; font-size:150px; color: blue;}
+            button {background-color: black; border-color:rgb(98, 0, 255); font-size:30px; margin: 0 auto; text-align: center; color: blue; padding: 10px 20px; border-radius: 10px; display: flex; justify-content: center; align-items: center; width: 300px; height: 60px;}
+            button:hover {color: rgb(98, 0, 255);}
+            button:after {background-color: brown;}
+        </style>
+    </head>
+    <body style="background-color: black;">
+        <div style="display: flex; flex-direction: column; vertical-align: middle; height: 98vh; justify-content: center;gap: 15px;">
+            <h1 id="heure">00:00</h1>
+            <button id="start" onclick="start()">Démarrer</button>
+            <button onclick="reinitialiser()">Réinitialiser</button>
+        </div>
+
+        <script language="JavaScript">
+            function reinitialiser() {marche=0; document.getElementById("start").innerHTML = "Démarrer"; document.getElementById("heure").innerHTML = "00:00"; a=0; b=0; c=0; d=0;}
+
+            function start() {
+                if (marche==0) {
+                    document.getElementById("start").innerHTML = "Pause";
+                    marche=1;
+                    loop();
+                }
+                else {marche=0;}
+            }
+            function loop() {
+                if(marche==1) {document.getElementById("heure").innerHTML = String(d)+String(c)+":"+String(b)+String(a); a+=1;}
+                if (a==10) {a=0; b+=1;};
+                if (b==6) {b=0; c+=1;};
+                if (c==10) {c=0; d+=1;};
+                if(marche==1) {setTimeout(loop,990);};
+            }
+            d = 0;
+            c = 0;
+            b = 0;
+            a = 0;
+            marche = 0;
+        </script>
+    </body>
+</html>
