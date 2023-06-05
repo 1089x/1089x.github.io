@@ -1,0 +1,53 @@
+<!doctype html5>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>You 're an IDIOT !</title>
+        <link rel="icon" type="image/png" sizes="100x100" href="https://media.gettyimages.com/id/1248542684/fr/vectoriel/fond-color%C3%A9-flou-abstrait.jpg?s=612x612&w=gi&k=20&c=_Eq7R-jocYBWlKbfWBJstfw-uPzmCbeBrtsK6g2UVVE=">
+        <style>
+            div {background-color: rgb(51, 255, 0); position: absolute; left: 0px; top: 0px; width: 100px; height: 100px;}
+        </style>
+    </head>
+    <body id="corpus" style="background-color: #fff;">
+        <h1 id="scriptum" style="color: #000; text-align: center; font-size: 300;">You 're an IDIOT !</h1>
+        <div id="divzero"></div>
+        <div id="divone"></div>
+        <div id="divtwo"></div>
+        <div id="divthree"></div>
+        <div id="divfour"></div>
+        <div id="divfive"></div>
+        <div id="divsix"></div>
+        <div id="divseven"></div>
+        <div id="divheight"></div>
+        <div id="divnine"></div>
+        <div id="divten"></div>
+        <div id="diveleven"></div>
+        <div id="divtwelve"></div>
+        <div id="divthirteen"></div>
+        <div id="divfourteen"></div>
+        <div id="divfifteen"></div>
+        <div id="divsixteen"></div>
+        <div id="divseventeen"></div>
+        <div id="divheightteen"></div>
+        <div id="divnineteen"></div>
+
+        <script>
+            let colors = ['#000', '#fff', '#f00','#0ff', '#0f0','#f0f', '#00f','#ff0','#000'];
+            function rrr() {
+                divs = ["divzero", "divone", "divtwo", "divthree", "divfour", "divfive", "divsix", "divseven", "divheight", "divnine", "divten", "diveleven", "divtwelve", "divthirteen", "divfourteen", "divfifteen", "divsixteen", "divseventeen", "divheightteen", "divnineteen"]
+                for (let i = 0; i < 20; i++) {
+                    document.getElementById(divs[i]).style.backgroundColor = colors[parseInt(Math.random()*8)];
+                    document.getElementById(divs[i]).style.left = parseInt(Math.random()*1400);
+                    document.getElementById(divs[i]).style.top = parseInt(Math.random()*750);
+                    sideone = parseInt(Math.random()*500)
+                    document.getElementById(divs[i]).style.width = sideone;
+                    document.getElementById(divs[i]).style.height = sideone;
+                }
+                document.getElementById("corpus").style.backgroundColor = colors[parseInt(Math.random()*8)];
+                document.getElementById("scriptum").style.color = colors[parseInt(Math.random()*8)];
+                setTimeout(rrr, 30);
+            }
+            rrr()
+        </script>
+    </body>
+</html>
