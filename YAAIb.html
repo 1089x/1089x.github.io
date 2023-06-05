@@ -39,9 +39,10 @@
 
 
         <script>
-            let colors = ['#000', '#fff', '#f00','#0ff', '#0f0','#f0f', '#00f','#ff0','#000'];
+            let colors = ['rgba(0, 0, 0, 0.8)', 'rgba(255, 255, 255, 0.8)', 'rgba(255, 0, 0, 0.8)','rgba(0, 255, 255, 0.8)', 'rgba(0, 255, 0, 0.8)','rgba(255, 0, 255, 0.8)', 'rgba(0, 0, 255, 0.8)','rgba(255, 255, 0, 0.8)','#000'];
+            //let colors = ['#000', '#fff', '#f00','#0ff', '#0f0','#f0f', '#00f','#ff0','#000'];
+            divs = ["divzero", "divone", "divtwo", "divthree", "divfour", "divfive", "divsix", "divseven", "divheight", "divnine", "divten", "diveleven", "divtwelve", "divthirteen", "divfourteen", "divfifteen", "divsixteen", "divseventeen", "divheightteen", "divnineteen", "divtwenty", "divtwentyone", "divtwentytwo", "divtwentythree", "divtwentyfour", "divtwentyfive"]
             function rrr() {
-                divs = ["divzero", "divone", "divtwo", "divthree", "divfour", "divfive", "divsix", "divseven", "divheight", "divnine", "divten", "diveleven", "divtwelve", "divthirteen", "divfourteen", "divfifteen", "divsixteen", "divseventeen", "divheightteen", "divnineteen", "divtwenty", "divtwentyone", "divtwentytwo", "divtwentythree", "divtwentyfour", "divtwentyfive"]
                 for (let i = 0; i < 26; i++) {
                     document.getElementById(divs[i]).style.backgroundColor = colors[parseInt(Math.random()*8)];
                     document.getElementById(divs[i]).style.left = parseInt(Math.random()*1400)-75;
