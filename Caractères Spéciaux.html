@@ -6,7 +6,8 @@
     <title>Caractères &Diamond; spéciaux</title>
     <style>
         textarea{background-color: #001; border-color:#001;}
-        button{color: #001; background-color: antiquewhite; border-color: #001;  border-radius: 10%;}
+        button{color: #001; background-color: antiquewhite; border-color: #001;  border-radius: 10px; border:none; box-shadow : 0px 0px 4px 4px rgb(50,0,0); font-family: Arial, Helvetica, sans-serif;}
+        button::after{background-color: rgb(183, 0, 255);}
     </style>
 </head>
 <body style="background-color: #001;">
@@ -275,14 +276,14 @@
         ♖♘♗♔♕♗♘♖ ♙♙♙♙♙♙♙♙
         ♜♞♝♚♛♝♞♜ ♟♟♟♟♟♟♟♟
     </textarea>
-    <button onclick="copy()">Copy Alt+240</button>
+    <button onclick="copy()" id="button">Copy Alt+240</button>
     <textarea id="textArea" style="width: 0px; height:0px;">&shy;</textarea>
     <script>
         function copy() {
             var content = document.getElementById('textArea');
             content.select();
             document.execCommand('copy');
+            document.getElementById("button").style.backgroundColor = "#99d";
         }
     </script>
-
 </body>
