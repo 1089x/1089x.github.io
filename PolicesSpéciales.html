@@ -1,0 +1,143 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="𝔘𝔫 𝔰𝔦𝔱𝔢 𝔭𝔬𝔲𝔯 𝔢𝔠𝔯𝔦𝔯𝔢 𝔞𝔳𝔢𝔠 𝔡𝔢𝔰 𝔭𝔬𝔩𝔦𝔠𝔢𝔰 𝔰𝔭𝔢𝔠𝔦𝔞𝔩𝔢𝔰">
+    <title>Texte Inversé</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROFj2GZeOJ061h-eTfYJCLSSFPSITiDTr_gQ&amp;usqp=CAU">
+    <style>
+        .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(0, 17, 11);
+        }
+        .main{
+            padding: 30px;
+            box-shadow: 0 0 30px 20px rgb(201, 201, 201);
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            font-family: fantasy;
+        } 
+        .container-1, .container-2{
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 0;
+        }  
+        textarea{
+            min-height: 100px;
+            min-width: 750px;
+            max-width: 900px;
+            max-height: 200px;
+            font-size: large;
+            margin-top: 0;
+            background-color: rgb(0, 41, 27);
+            color: blanchedalmond;
+        }
+        textarea:focus {
+            outline: none;
+        }
+        .title{
+            font-size: 30px;
+            display: block;
+            text-align: center;
+            color: blanchedalmond;
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button{
+            font-size: 20px;
+            background: rgb(0, 17, 11);
+            padding: 5px 15px 5px 15px;
+            width: 170px;
+            cursor: pointer;
+            color: blanchedalmond;
+            border-radius: 20px;
+            margin-top: 20px;
+            margin-left: 10px;
+            margin-right: 10px;}
+        button:hover{
+            background: rgb(0, 41, 27);
+        }
+        .convertir{background-color: rgb(0, 41, 27);}
+        .convertir:hover{
+            background: rgb(0, 17, 11);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="container-1"><div class="title"><p>Texte normal</p></div><div class="content"><textarea id="text"></textarea><button onclick="convertir()" class="convertir">Convertir</button></div></div>
+            <div class="container-2"><div class="title"><p>Résultat</p></div><div class="content"><textarea id="resultat"></textarea></div></div>
+            <div class="polices">
+                <button onclick="Cursive()" id="cursive">𝓒𝓾𝓻𝓼𝓲𝓿𝓮</button>
+                <button onclick="Elargi()" id="elargi">Ｅｌａｒｇｉ</button>
+                <button onclick="Manuscrit()" id="manuscrit">𝔐𝔞𝔫𝔲𝔰𝔠𝔯𝔦𝔱</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var accents={"é":"e","è":"e","ê":"e","à":"a","ù":"u","ç":"c"}
+        var cursive = {"a":"𝓪","b":"𝓫","c":"𝓬","d":"𝓭","e":"𝓮","f":"𝓯","g":"𝓰","h":"𝓱","i":"𝓲","j":"𝓳","k":"𝓴","l":"𝓵","m":"𝓶",
+        "n":"𝓷","o":"𝓸","p":"𝓹","q":"𝓺","r":"𝓻","s":"𝓼","t":"𝓽","u":"𝓾","v":"𝓿","w":"𝔀","x":"𝔁","y":"𝔂","z":"𝔃",
+        "A":"𝓐","B":"𝓑","C":"𝓒","D":"𝓓","E":"𝓔","F":"𝓕","G":"𝓖","H":"𝓗","I":"𝓘","J":"𝓙","K":"𝓚","L":"𝓛","M":"𝓜",
+        "N":"𝓝","O":"𝓞","P":"𝓟","Q":"𝓠","R":"𝓡","S":"𝓢","T":"𝓣","U":"𝓤","V":"𝓥","W":"𝓦","X":"𝓧","Y":"𝓨","Z":"𝓩"}
+        var elargi={"a":"ａ","b":"ｂ","c":"ｃ","d":"ｄ","e":"ｅ","f":"ｆ","g":"ｇ","h":"ｈ","i":"ｉ","j":"ｊ","k":"ｋ","l":"ｌ","m":"ｍ",
+        "n":"ｎ","o":"ｏ","p":"ｐ","q":"ｑ","r":"ｒ","s":"ｓ","t":"ｔ","u":"ｕ","v":"ｖ","w":"ｗ","x":"ｘ","y":"ｙ","z":"ｚ",
+        "A":"Ａ","B":"Ｂ","C":"Ｃ","D":"Ｄ","E":"Ｅ","F":"Ｆ","G":"Ｇ","H":"Ｈ","I":"Ｉ","J":"Ｊ","K":"Ｋ","L":"Ｌ","M":"Ｍ",
+        "N":"Ｎ","O":"Ｏ","P":"Ｐ","Q":"Ｑ","R":"Ｒ","S":"Ｓ","T":"Ｔ","U":"Ｕ","V":"Ｖ","W":"Ｗ","X":"Ｘ","Y":"Ｙ","Z":"Ｚ",}
+        var manuscrit={"a":"𝔞","b":"𝔟","c":"𝔠","d":"𝔡","e":"𝔢","f":"𝔣","g":"𝔤","h":"𝔥","i":"𝔦","j":"𝔧","k":"𝔨","l":"𝔩","m":"𝔪",
+           "n":"𝔫","o":"𝔬","p":"𝔭","q":"𝔮","r":"𝔯","s":"𝔰","t":"𝔱","u":"𝔲","v":"𝔳","w":"𝔴","x":"𝔵","y":"𝔶","z":"𝔷",
+           "A":"𝔄","B":"𝔅","C":"ℭ","D":"𝔇","E":"𝔈","F":"𝔉","G":"𝔊","H":"ℌ","I":"ℑ","J":"𝔍","K":"𝔎","L":"𝔏","M":"𝔐",
+           "N":"𝔑","O":"𝔒","P":"𝔓","Q":"𝔔","R":"ℜ","S":"𝔖","T":"𝔗","U":"𝔘","V":"𝔙","W":"𝔚","X":"𝔛","Y":"𝔜","Z":"ℨ"}
+        
+        var style=manuscrit
+        document.getElementById("manuscrit").style.backgroundColor="rgb(0, 41, 27)"
+
+        function Cursive() {
+            style=cursive;
+            document.getElementById("cursive").style.backgroundColor="rgb(0, 41, 27)"
+            document.getElementById("elargi").style.backgroundColor="rgb(0, 17, 11)"
+            document.getElementById("manuscrit").style.backgroundColor="rgb(0, 17, 11)"
+        }
+        function Elargi() {
+            style=elargi;
+            document.getElementById("elargi").style.backgroundColor="rgb(0, 41, 27)"
+            document.getElementById("cursive").style.backgroundColor="rgb(0, 17, 11)"
+            document.getElementById("manuscrit").style.backgroundColor="rgb(0, 17, 11)"
+        }
+        function Manuscrit() {
+            style=manuscrit;
+            document.getElementById("manuscrit").style.backgroundColor="rgb(0, 41, 27)"
+            document.getElementById("elargi").style.backgroundColor="rgb(0, 17, 11)"
+            document.getElementById("cursive").style.backgroundColor="rgb(0, 17, 11)"
+        }
+
+        function convertir() {
+            text = document.getElementById("text").value;
+            for (var cle in accents) {text=text.replaceAll(cle, accents[cle]);}
+            for (var cle in style) {text=text.replaceAll(cle, style[cle]);}
+            document.getElementById("resultat").innerText = text;
+            content = document.getElementById('resultat');
+            content.select();
+            document.execCommand('copy');
+            }
+    </script>
+</body>
+</html>
