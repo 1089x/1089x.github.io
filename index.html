@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" sizes="100x100" href="https://1089x.github.io/Images/Etoiles.png">
     <meta name="theme-color" content="#400">
     <style>
-        button {background-color: rgb(214, 0, 0); border-color:gold; font-size:27px; margin: 0 auto; text-align: center; color: rgb(15, 0, 80); padding: 10px 20px; border-radius: 5px; display: flex; justify-content: center; align-items: center; width: 400px; height: 60px;}
+        button {background-color: rgb(214, 0, 0); border-color:gold; font-size:27px; margin: 0 auto; text-align: center; color: rgb(15, 0, 80); padding: 10px 20px; border-radius: 5px; display: flex; justify-content: center; align-items: center; width: 400px; height: 60px; cursor:pointer;}
         button:hover {background-color: rgb(255, 153, 0); transition: 1000ms;border-color: #700;color: #602; font-size:31px;}
     </style>
 </head>
@@ -21,5 +21,12 @@
         <button onclick="document.location.href='YAAIb'">You're an idiot (Bis)</button>
         <button onclick="document.location.href='Caractères Spéciaux'">Caractères Spéciaux</button>
     </div>
+    <script>
+        function cursor1(){document.getElementById("main").style.cursor = "none"; setTimeout(cursor2,30);}
+        function cursor2(){document.getElementById("main").style.cursor = "not-allowed"; setTimeout(cursor3,40);}
+        function cursor3(){document.getElementById("main").style.cursor = "wait"; setTimeout(cursor4,50);}
+        function cursor4(){document.getElementById("main").style.cursor = "help"; setTimeout(cursor1,40);}
+        cursor1()
+    </script>
 </body>
 </html>
