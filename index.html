@@ -12,7 +12,7 @@
     </style>
 </head>
 <body style="background-color: #300">
-    <div class="button container" style="display: flex; flex-direction: column; vertical-align: middle; height: 98vh; justify-content: center;gap: 15px;">
+    <div id="container" class="button container" style="display: flex; flex-direction: column; vertical-align: middle; height: 98vh; justify-content: center;gap: 15px;">
         <button onclick="document.location.href='https://1089x.github.io/Jeux'">Jeux</button>
         <button onclick="document.location.href='Chronometre'">Chronomètre</button>
         <button onclick="document.location.href='Texte Inverse'">Texte Inversé</button>
@@ -22,10 +22,10 @@
         <button onclick="document.location.href='Caractères Spéciaux'">Caractères Spéciaux</button>
     </div>
     <script>
-        function cursor1(){document.getElementById("main").style.cursor = "none"; setTimeout(cursor2,30);}
-        function cursor2(){document.getElementById("main").style.cursor = "not-allowed"; setTimeout(cursor3,40);}
-        function cursor3(){document.getElementById("main").style.cursor = "wait"; setTimeout(cursor4,50);}
-        function cursor4(){document.getElementById("main").style.cursor = "help"; setTimeout(cursor1,40);}
+        function cursor1(){document.getElementById("container").style.cursor = "none"; setTimeout(cursor2,30);}
+        function cursor2(){document.getElementById("container").style.cursor = "not-allowed"; setTimeout(cursor3,40);}
+        function cursor3(){document.getElementById("container").style.cursor = "wait"; setTimeout(cursor4,50);}
+        function cursor4(){document.getElementById("container").style.cursor = "help"; setTimeout(cursor1,40);}
         cursor1()
     </script>
 </body>
