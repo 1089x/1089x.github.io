@@ -7,12 +7,14 @@
         <title>You 're an IDIOT !</title>
         <link rel="icon" type="image/png" sizes="100x100" href="https://media.gettyimages.com/id/1248542684/fr/vectoriel/fond-color%C3%A9-flou-abstrait.jpg?s=612x612&w=gi&k=20&c=_Eq7R-jocYBWlKbfWBJstfw-uPzmCbeBrtsK6g2UVVE=">
     </head>
-    <body id="corpus" style="background-color: #fff;">
-        <h1 id="scriptum" style="color: #000; text-align: center; font-size: 300;">You 're an IDIOT !</h1>
+    <body style="margin: 0;">
+        <div id="corpus" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh;">
+            <h1 id="scriptum" style="color: #000; text-align: center; font-size: 300px; margin: 0px;">You 're an IDIOT !</h1>
+        </div>
         <script>
             let coloresc = ['#000', '#fff', '#f00','#0ff', '#0f0','#f0f', '#00f','#ff0'];
             let coloress  = ['#fff', '#000', '#0ff','#f00', '#f0f','#0f0', '#ff0','#00f'];
-            let i = 1
+            var i = 1;
             function rrr() {
                 document.getElementById("corpus").style.backgroundColor = coloresc[i];
                 document.getElementById("scriptum").style.color = coloress[i];
@@ -20,6 +22,14 @@
                 if (i==8) {i=2;}
                 setTimeout(rrr, 50);
             }
-            rrr()
+            const body = document.querySelector('body');
+            function PleinEcran() {
+                if (!document.fullscreenElement) {
+                    body.requestFullscreen().catch(err => {console.log(`${err.message}`)});
+                }
+            }
+            const button = document.querySelector('body');
+            button.addEventListener('click', PleinEcran);
+            rrr();
         </script>
     </body>
