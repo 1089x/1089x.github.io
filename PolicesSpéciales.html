@@ -89,6 +89,7 @@
                 <button onclick="Cursive()" id="cursive">𝓒𝓾𝓻𝓼𝓲𝓿𝓮</button>
                 <button onclick="Elargi()" id="elargi">Ｅｌａｒｇｉ</button>
                 <button onclick="Manuscrit()" id="manuscrit">𝔐𝔞𝔫𝔲𝔰𝔠𝔯𝔦𝔱</button>
+                <button onclick="Machine()" id="machine">𝙼𝚊𝚌𝚑𝚒𝚗𝚎</button>
             </div>
         </div>
     </div>
@@ -105,7 +106,13 @@
         var manuscrit={"a":"𝔞","b":"𝔟","c":"𝔠","d":"𝔡","e":"𝔢","f":"𝔣","g":"𝔤","h":"𝔥","i":"𝔦","j":"𝔧","k":"𝔨","l":"𝔩","m":"𝔪",
            "n":"𝔫","o":"𝔬","p":"𝔭","q":"𝔮","r":"𝔯","s":"𝔰","t":"𝔱","u":"𝔲","v":"𝔳","w":"𝔴","x":"𝔵","y":"𝔶","z":"𝔷",
            "A":"𝔄","B":"𝔅","C":"ℭ","D":"𝔇","E":"𝔈","F":"𝔉","G":"𝔊","H":"ℌ","I":"ℑ","J":"𝔍","K":"𝔎","L":"𝔏","M":"𝔐",
-           "N":"𝔑","O":"𝔒","P":"𝔓","Q":"𝔔","R":"ℜ","S":"𝔖","T":"𝔗","U":"𝔘","V":"𝔙","W":"𝔚","X":"𝔛","Y":"𝔜","Z":"ℨ"}
+           "N":"𝔑","O":"𝔒","P":"𝔓","Q":"𝔔","R":"ℜ","S":"𝔖","T":"𝔗","U":"𝔘","V":"𝔙","W":"𝔚","X":"𝔛","Y":"𝔜","Z":"ℨ",
+           "0":"𝟘","1":"𝟙","2":"𝟚","3":"𝟛","4":"𝟜","5":"𝟝","6":"𝟞","7":"𝟟","8":"𝟠","9":"𝟡"}
+        var machine={"a":"𝚊","b":"𝚋","c":"𝚌","d":"𝚍","e":"𝚎","f":"𝚏","g":"𝚐","h":"𝚑","i":"𝚒","j":"𝚓","k":"𝚔","l":"𝚕","m":"𝚖",
+         "n":"𝚗","o":"𝚘","p":"𝚙","q":"𝚚","r":"𝚛","s":"𝚜","t":"𝚝","u":"𝚞","v":"𝚟","w":"𝚠","x":"𝚡","y":"𝚢","z":"𝚣",
+         "A":"𝙰","B":"𝙱","C":"𝙲","D":"𝙳","E":"𝙴","F":"𝙵","G":"𝙶","H":"𝙷","I":"𝙸","J":"𝙹","K":"𝙺","L":"𝙻","M":"𝙼",
+         "N":"𝙽","O":"𝙾","P":"𝙿","Q":"𝚀","R":"𝚁","S":"𝚂","T":"𝚃","U":"𝚄","V":"𝚅","W":"𝚆","X":"𝚇","Y":"𝚈","Z":"𝚉",
+         "0":"𝟶","1":"𝟷","2":"𝟸","3":"𝟹","4":"𝟺","5":"𝟻","6":"𝟼","7":"𝟽","8":"𝟾","9":"𝟿"}
         
         var style=manuscrit
         document.getElementById("manuscrit").style.backgroundColor="rgb(0, 41, 27)"
@@ -115,16 +122,26 @@
             document.getElementById("cursive").style.backgroundColor="rgb(0, 41, 27)"
             document.getElementById("elargi").style.backgroundColor="rgb(0, 17, 11)"
             document.getElementById("manuscrit").style.backgroundColor="rgb(0, 17, 11)"
+            document.getElementById("machine").style.backgroundColor="rgb(0, 17, 11)"
         }
         function Elargi() {
             style=elargi;
             document.getElementById("elargi").style.backgroundColor="rgb(0, 41, 27)"
             document.getElementById("cursive").style.backgroundColor="rgb(0, 17, 11)"
             document.getElementById("manuscrit").style.backgroundColor="rgb(0, 17, 11)"
+            document.getElementById("machine").style.backgroundColor="rgb(0, 17, 11)"
         }
         function Manuscrit() {
             style=manuscrit;
             document.getElementById("manuscrit").style.backgroundColor="rgb(0, 41, 27)"
+            document.getElementById("elargi").style.backgroundColor="rgb(0, 17, 11)"
+            document.getElementById("cursive").style.backgroundColor="rgb(0, 17, 11)"
+            document.getElementById("machine").style.backgroundColor="rgb(0, 17, 11)"
+        }
+        function Machine() {
+            style=machine;
+            document.getElementById("machine").style.backgroundColor="rgb(0, 41, 27)"
+            document.getElementById("manuscrit").style.backgroundColor="rgb(0, 17, 11)"
             document.getElementById("elargi").style.backgroundColor="rgb(0, 17, 11)"
             document.getElementById("cursive").style.backgroundColor="rgb(0, 17, 11)"
         }
